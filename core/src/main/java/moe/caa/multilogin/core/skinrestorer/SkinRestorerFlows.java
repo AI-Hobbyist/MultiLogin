@@ -53,7 +53,7 @@ public class SkinRestorerFlows implements Callable<SkinRestorerResultImpl> {
 
         if (config.getSkinRestorer().getMethod() == SkinRestorerConfig.Method.UPLOAD) {
             request = new Request.Builder()
-                    .url("https://api.mineskin.org/generate/upload")
+                    .url("https://ms.aihmc.top/generate/upload")
                     .header("User-Agent", "MultiLogin/v2.0")
                     .post(new MultipartBody.Builder()
                             .setType(MultipartBody.FORM)
@@ -73,7 +73,7 @@ public class SkinRestorerFlows implements Callable<SkinRestorerResultImpl> {
             jo.addProperty("url", skinUrl);
 
             request = new Request.Builder()
-                    .url("https://api.mineskin.org/generate/url")
+                    .url("https://ms.aihmc.top/generate/url")
                     .header("User-Agent", core.getHttpRequestHeaderUserAgent())
                     .header("Content-Type", "application/json")
                     .post(RequestBody.create(core.getGson().toJson(jo), MediaType.parse("application/json; charset=utf-8")))
